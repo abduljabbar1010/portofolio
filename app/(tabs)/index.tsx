@@ -1,44 +1,66 @@
-import { Text, View, StyleSheet, Image } from "react-native";
-import { Link } from "expo-router";
+import { 
+  Text, 
+  View, 
+  StyleSheet,
+  Image
+} from "react-native";
+import { Link } from 'expo-router';
+import { CustomeCard } from '@/components'
 
 export default function Index() {
   return (
-    <View style={style.container}>
-      <Image 
-        style={style.tinyLogo}
-        source={{
-          uri: 'https://reactnative.dev/img/tiny_logo.png',
-        }}
-      />
-      <Text style={style.Textname}>
-        abdul jabbar
-      </Text>
-      <Text style={style.Textdesc}>jashdua@gmail.com</Text>
-      <Link href="/experience">Experience</Link>
+    <View>
+      <View style={style.container}>
+        <Image 
+          style={style.tinyLogo} 
+          source={{
+            uri: 'https://reactnative.dev/img/tiny_logo.png',
+          }}/>
+        <Text style={style.textName}>
+         Abdul Jabbar
+        </Text>
+        <Text style={[style.subText, style.textWhite]}>
+          hasjhjas@mail.com
+        </Text>
+        <Link href="/experience">Experience</Link>
+      </View>
+      <View style={style.border}>
+          <CustomeCard nama="Natan"/>
+          <CustomeCard nama="Anto" />
+          <CustomeCard nama="Surya"/>
+      </View>
+
     </View>
   );
 }
 
 const style = StyleSheet.create({
   container: {
-    backgroundColor: "crimson",
-    height: 250,
-    borderBottomLeftRadius: 30,
-    borderBottomRightRadius: 30,
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor:"#0E627C",
+    height:250,
+    borderBottomEndRadius:32,
+    borderBottomStartRadius: 32,
+    justifyContent:"center",
+    alignItems:"center"
   },
-  Textname: {
-    fontSize: 24,
-    fontWeight: "bold",
+  textName:{
+    color:"white",
+    fontSize: 24
+  },
+  subText:{
+    fontSize:14
+  },
+  textWhite:{
     color: "white",
   },
-  Textdesc: {
-    fontSize: 12,
-    color: 'white',
+  tinyLogo:{
+    width: 50,
+    height: 50,
   },
-  tinyLogo: {
-    width: 100,
-    height: 100,
-  },
-});
+  border:{
+    top:-25,
+    paddingLeft:20,
+    paddingRight:25,
+  }
+
+})
